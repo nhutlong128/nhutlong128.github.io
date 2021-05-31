@@ -4,8 +4,6 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import MercedesLogo from '../images/mercedes-benz-mb-vector-logo-400x400.png'
 function Header(props) {
     return (
@@ -32,11 +30,11 @@ function Header(props) {
                             props.all_car_list.map((item, i) => {
                                 return (
                                     <Container key={item.node.carClass} >
-                                        <NavDropdown.Item disabled as="button" variant="primary"><b>{item.node.carClass}</b></NavDropdown.Item>
+                                        <NavDropdown.Item  as="button" variant="primary"><Link to={`${item.node.carClassPath}`}><b>{item.node.carClass}</b></Link></NavDropdown.Item>
                                             {
                                                 item.node['car_information'].map((car, i) => {
                                                     return (
-                                                        <NavDropdown.Item key={car.carName} className="underline"><Link to={`/cars/${car.carName}`}>{car.carDisplayName}</Link></NavDropdown.Item>
+                                                        <NavDropdown.Item key={car.carName} className="underline"><Link to={`${car.carName}`}>{car.carDisplayName}</Link></NavDropdown.Item>
                                                         
                                                     );
                                                 })

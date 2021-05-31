@@ -22,7 +22,7 @@ function ProductCard(props) {
                 <Card.Text>
                 Giá từ: <b>{CarPrice} tỷ đồng</b> 
                 </Card.Text>
-                <Button variant="success" className='btn-block' size='md'><Link className='stretched-link' to={`/cars/${carName}`}></Link>Chi tiết</Button>
+                <Button variant="success" className='btn-block' size='md'><Link className='stretched-link' to={`${carName}`}></Link>Chi tiết</Button>
             </Card.Body>
         </Card>
 
