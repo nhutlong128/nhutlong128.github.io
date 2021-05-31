@@ -23,5 +23,23 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'Query',
+        fieldName: 'graphql_gatsby',
+        url: 'https://graphql.contentful.com/content/v1/spaces/m4w3zg4xlj2p',
+        headers: {
+          Authorization: `Bearer ${'_OjdIAgP4_ESd0JQWeqfwltJVPsCpwj_Rjdm0YN7xbc'}`,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `m4w3zg4xlj2p`,
+        accessToken: `_OjdIAgP4_ESd0JQWeqfwltJVPsCpwj_Rjdm0YN7xbc`,
+      },
+    },
   ],
 };
