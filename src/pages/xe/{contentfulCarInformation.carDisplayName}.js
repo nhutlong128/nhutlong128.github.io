@@ -83,6 +83,7 @@ function ProductPage(props) {
                 <meta charSet="utf-8" />
                 <title>Mercedes Sài Gòn | {carInformation.carDisplayName}</title>
                 <meta name="description" content={`Giá xe ${carInformation.carDisplayName} tốt nhất đăng ký lái thử tư vấn trả góp`} />
+                <meta name="referrer" content="origin"/>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             </Helmet>
