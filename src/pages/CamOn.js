@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import PhoneRinging from '../components/PhoneRinging'
 import { Helmet } from "react-helmet"
 
-function ErrorPage() {
+function CamOn() {
   const all_car_list_query = useStaticQuery(graphql`
   query GetAllCarForThankYouPage {
     allContentfulCarClass {
@@ -62,5 +62,5 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage
+export default CamOn
 
