@@ -10,7 +10,7 @@ function CustomerForm(props){
         <Container className='px-3 py-3 my-4 text-white bg-dark align-items-center'>
             <h4 className="text-center m-2 p-1" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>NHẬN BÁO GIÁ</b></h4>
             <hr className='border border-light mb-4'/>
-            <Form action="https://formsubmit.co/nhutlong128@gmail.com" method="POST" target="_blank">
+            <Form action="https://formsubmit.co/nhutlong128@gmail.com" method="POST">
                 <input type="hidden" name="_cc" value="anhhuyc22017@gmail.com"/>
                 <input type="hidden" name="_next" value="https://mercedesretailsitemaster.gatsbyjs.io/"/>
                 <input type="hidden" name="_captcha" value="false"/>

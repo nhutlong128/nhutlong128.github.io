@@ -34,6 +34,7 @@ function DiscountProduct(props) {
                             </div>
                             )
                     }
+                    return null
                     
                 }
             )

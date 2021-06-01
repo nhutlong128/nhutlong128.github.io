@@ -76,7 +76,6 @@ function ProductPage(props) {
   `);
     const all_car_list = all_car_query.allContentfulCarClass.edges;
     const selected_car = all_car_list.filter(({node}) => node.car_information.some(({carName}) => carName === `/xe/${props.params.carDisplayName}/`));
-    const carClass = selected_car[0].node.carClass;
     const carInformation = selected_car[0].node.car_information[0]
     return (
         <div>

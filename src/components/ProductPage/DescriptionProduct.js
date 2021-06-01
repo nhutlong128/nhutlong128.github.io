@@ -48,7 +48,7 @@ function DescriptionProduct(props) {
                 let imageID = node.data.target.sys.id;
                 let image_fluid = null
                 let image_title = null
-                description.references.map((item, i) => {
+                description.references.forEach((item, i) => {
                     if (item.contentful_id === imageID) {
                         image_fluid = item.fluid
                         image_title = item.title

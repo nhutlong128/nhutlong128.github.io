@@ -12,7 +12,7 @@ import { Helmet } from "react-helmet"
 
 function ErrorPage() {
   const all_car_list_query = useStaticQuery(graphql`
-  query GetAllCarForErrorPage {
+  query GetAllCarForThankYouPage {
     allContentfulCarClass {
       edges {
         node {
@@ -49,8 +49,8 @@ function ErrorPage() {
       <Container className='my-5'>
         <Row>
           <Col className='text-center'>
-            <h1>Lỗi 404</h1>
-            <h3>Không tìm thấy nội dung</h3>
+            <h1>CÁM ƠN QUÝ KHÁCH</h1>
+            <h3>Chúng tôi sẽ liên hệ với quý khách trong thời gian sớm nhất.</h3>
           </Col>
         </Row>
           
