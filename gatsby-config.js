@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Mercedes Landing Page",
+    title: "Mercedes Sài Gòn",
+    siteUrl: 'https://mercedesretailsitemaster.gatsbyjs.io/',
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",
