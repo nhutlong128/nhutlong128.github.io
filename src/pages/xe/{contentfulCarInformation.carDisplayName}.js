@@ -29,8 +29,9 @@ function ProductPage(props) {
         edges {
           node {
             carClass
+            carClassPath: gatsbyPath(filePath: "/loai-xe/{contentfulCarClass.carClass}")
             car_information {
-              carName: gatsbyPath(filePath: "/xe/{contentfulCarInformation.carName}")
+              carName: gatsbyPath(filePath: "/xe/{contentfulCarInformation.carDisplayName}")
               carPrice
               priceUnit
               metaData
@@ -74,15 +75,15 @@ function ProductPage(props) {
     }
   `);
     const all_car_list = all_car_query.allContentfulCarClass.edges;
-    const selected_car = all_car_list.filter(({node}) => node.car_information.some(({carName}) => carName === `/xe/${props.params.carName}/`));
+    const selected_car = all_car_list.filter(({node}) => node.car_information.some(({carName}) => carName === `/xe/${props.params.carDisplayName}/`));
     const carClass = selected_car[0].node.carClass;
     const carInformation = selected_car[0].node.car_information[0]
     return (
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>{carInformation.carDisplayName}</title>
-                <meta name="description" content="We sale Mercedes" />
+                <title>Mercedes Sài Gòn | {carInformation.carDisplayName}</title>
+                <meta name="description" content={`Giá xe ${carInformation.carDisplayName} tốt nhất đăng ký lái thử tư vấn trả góp`} />
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             </Helmet>
@@ -119,7 +120,7 @@ function ProductPage(props) {
 
             </Container>
             <Footer />
-            <PhoneRinging />
+            <PhoneRinging all_car_list = {all_car_list}/>
         </div>
     )
 }
