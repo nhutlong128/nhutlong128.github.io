@@ -42,7 +42,6 @@ function CamOn() {
         <meta charSet="utf-8" />
         <title>Mercedes Sài Gòn | Thank You Page</title>
         <meta name="description" content="YÊU CẦU BÁO GIÁ ĐĂng Ký LÁi thử CÁC DÒNG XE MERCEDES-BENZ BÁN CHẠY NHẤT" />
-        <meta name="robots" content="all" />
         <meta name="referrer" content="origin"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>

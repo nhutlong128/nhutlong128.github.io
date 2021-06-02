@@ -1,9 +1,20 @@
+const siteUrl = 'https://mercedesretailsitemaster.gatsbyjs.io'
+const siteMap = 'https://mercedesretailsitemaster.gatsbyjs.io/sitemap/sitemap-0.xml'
 module.exports = {
   siteMetadata: {
     title: "Mercedes Sài Gòn",
-    siteUrl: 'https://mercedesretailsitemaster.gatsbyjs.io/',
+    siteUrl: siteUrl,
   },
   plugins: [
+    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: siteMap ,
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     {
@@ -40,6 +51,17 @@ module.exports = {
       options: {
         spaceId: `m4w3zg4xlj2p`,
         accessToken: `_OjdIAgP4_ESd0JQWeqfwltJVPsCpwj_Rjdm0YN7xbc`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
       },
     },
   ],
