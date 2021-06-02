@@ -14,7 +14,7 @@ function ProductCard(props) {
     return (
         <Card style={{width: '100%'}} className="text-center m-1 card-flyer">
             <div className='image-box'>
-                <Card.Img variant="top" src={CarThumbnail} className='card-img'/>
+                <Card.Img variant="top" src={CarThumbnail} className='card-img' alt={carName}/>
             </div>
             
             <Card.Body className='p-2'>

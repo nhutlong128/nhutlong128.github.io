@@ -95,7 +95,7 @@ function ProductPage(props) {
                 {/* Col containing name & gallery   */}
                 <Col xs={left_xs_size} md={left_md_size} lg = {left_lg_size}>
                   <NameProduct carDisplayName = {carInformation.carDisplayName}/>
-                  <GalleryProduct carGallery = {carInformation.carGallery}/>
+                  <GalleryProduct carGallery = {carInformation.carGallery} carName = {carInformation.carName}/>
                   <PriceProduct carPrice = {carInformation.carPrice} priceUnit = {carInformation.priceUnit}/>
                   <CustomerForm all_car_list = {all_car_list}/>
                 </Col>

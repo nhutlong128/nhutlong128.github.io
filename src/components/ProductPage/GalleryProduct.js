@@ -8,6 +8,7 @@ function GalleryProduct(props) {
         return null
     }
     let carGalleryArray = props.carGallery.filter((item) => item.fluid !== null)
+    let carName = props.carName
     return (
         <Container className='my-5'>
             <Carousel>
@@ -15,7 +16,7 @@ function GalleryProduct(props) {
                     carGalleryArray.map((item, i) => {
                         return (
                             <Carousel.Item key={i}>
-                                <Img fluid={item.fluid}/>
+                                <Img fluid={item.fluid} alt={carName}/>
                             </Carousel.Item>
                         )
                     })
