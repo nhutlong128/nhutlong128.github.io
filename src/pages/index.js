@@ -43,6 +43,7 @@ function IndexPage() {
         <title>Mercedes Sài Gòn</title>
         <meta name="description" content="YÊU CẦU BÁO GIÁ ĐĂng Ký LÁi thử CÁC DÒNG XE MERCEDES-BENZ BÁN CHẠY NHẤT" />
         <meta name="referrer" content="origin"/>
+        <meta name="robots" content="all" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="icon" href={MercedesLogo}/>
