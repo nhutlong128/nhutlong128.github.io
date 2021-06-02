@@ -22,7 +22,6 @@ function Footer() {
     return (
         <Container className='mt-4 p-5 bg-dark text-white' fluid>
                 <Row>
-                    <Col></Col>
                     {
                         list_seller.map((item, i) => {
                             return (
@@ -49,7 +48,6 @@ function Footer() {
                             );
                         })
                     }
-                <Col></Col>
                 </Row>
                 
             

@@ -23,7 +23,7 @@ function DescriptionProduct(props) {
         },
         renderNode: {
             [BLOCKS.PARAGRAPH]: (node, children) => {
-                let paragraph = children[0]
+                let paragraph = node.content[0].value
                 if (paragraph.includes('::')) {
                     let left = paragraph.split('::')[0];
                     let right = paragraph.split('::')[1];
@@ -73,7 +73,7 @@ function DescriptionProduct(props) {
                         const id_found = id_video_pattern.exec(video_url)[1]
                         const title_video = children[0]
                         return (
-                            <div class="embed-responsive embed-responsive-16by9">
+                            <div className="embed-responsive embed-responsive-16by9">
                                 <iframe className="embed-responsive-item" src = {`https://www.youtube.com/embed/${id_found}`} title={title_video} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                             </div>
                         )

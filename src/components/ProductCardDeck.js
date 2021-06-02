@@ -17,6 +17,9 @@ function ProductCardDeck(props) {
     
 
     const productBody = props.all_car_list.map((item, i) => {
+        if (item.node['car_information'] === null) {
+            return null
+        }
         return (
             <Container className='mt-4' key={item.node.carClass}>
                 <Container className='mb-4'>
@@ -32,7 +35,7 @@ function ProductCardDeck(props) {
                 <CardDeck>
                 <Row>
                     
-                    {item.node['car_information'].map((car, i) => {
+                    {(item.node['car_information'] !== null) && item.node['car_information'].map((car, i) => {
                         return (
                             <Col key={car.carName} xs = {card_xs_size} md = {card_md_size} lg = {card_lg_size}><ProductCard carInformation={car}/></Col>
                         );

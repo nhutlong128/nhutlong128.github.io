@@ -4,6 +4,9 @@ import Img from "gatsby-image"
 import Container from 'react-bootstrap/Container';
 
 function GalleryProduct(props) {
+    if (props.carGallery === null) {
+        return null
+    }
     let carGalleryArray = props.carGallery.filter((item) => item.fluid !== null)
     return (
         <Container className='my-5'>
