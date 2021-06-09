@@ -4,8 +4,19 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import { graphql, useStaticQuery } from "gatsby"
 function CustomerForm(props){
-    const all_car_list = props.all_car_list
+    const GET_ALL_CARS_FOR_CUSTOMER_FORM = useStaticQuery(graphql`
+    query GetAllCarsForCustomerForm {
+      allStrapiCarClasses {
+        nodes {
+          Name
+          Order
+        }
+      }
+    }
+  `);    
+    const all_car_list = GET_ALL_CARS_FOR_CUSTOMER_FORM.allStrapiCarClasses.nodes
     return (
         <Container className='px-3 py-3 my-4 text-white bg-dark align-items-center'>
             <h4 className="text-center m-2 p-1" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>NHẬN BÁO GIÁ</b></h4>
@@ -40,7 +51,7 @@ function CustomerForm(props){
                             <Form.Control name='customer_car_selection' as="select" size="lg" required>
                                 <option value="" disabled selected>Chọn dòng xe</option>
                                 {
-                                    all_car_list.map((item, i) => <option key={item.node.carClass}>{item.node.carClass}</option>)
+                                    all_car_list.map((item, i) => <option key={item.Name}>{item.Name}</option>)
                                 }
                             </Form.Control>
                         </Form.Group>

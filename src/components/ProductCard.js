@@ -2,27 +2,31 @@ import React from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 
 
 function ProductCard(props) {
     let carInformation = props.carInformation;
-    let carDisplayName = carInformation.carDisplayName;
-    let CarPrice = carInformation.carPrice;
-    let CarThumbnail = carInformation.thumbnail.file.url;
-    let carName = carInformation.carName
+    let carDisplayName = carInformation.DisplayName;
+    let CarOriginalPrice = carInformation.OriginalPrice;
+    let CarInstalmentPrice = carInformation.InstalmentPrice;
+    let CarThumbnail = carInformation.Thumbnail.localFile.childImageSharp.gatsbyImageData;
+    let carName = carInformation.RouteName
     return (
         <Card style={{width: '100%'}} className="text-center m-1 card-flyer">
             <div className='image-box'>
-                <Card.Img variant="top" src={CarThumbnail} className='card-img' alt={carName}/>
+                <GatsbyImage image={CarThumbnail} className='card-img' alt={carName}/>
             </div>
             
             <Card.Body className='p-2'>
                 <Card.Title as='h6' style={{fontFamily: 'Roboto Condensed, sans-serif'}}><b>{carDisplayName}</b></Card.Title>
                 <Card.Text>
-                Giá từ: <b>{CarPrice} tỷ đồng</b> 
+                <p>Mua ngay: <b>{CarOriginalPrice}</b></p>
+                <h4>MUA TRƯỚC CHỈ: <b className='text-warning'>{CarInstalmentPrice}</b></h4>
+                
                 </Card.Text>
-                <Button variant="success" className='btn-block' size='md'><Link className='stretched-link' to={`${carName}`}></Link>Chi tiết</Button>
+                <Button variant="primary" className='btn-block' size='md'><Link className='stretched-link' to={`/xe/${carName}`}></Link>Chi tiết</Button>
             </Card.Body>
         </Card>
 

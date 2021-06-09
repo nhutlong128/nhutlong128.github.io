@@ -47,13 +47,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `m4w3zg4xlj2p`,
-        accessToken: `_OjdIAgP4_ESd0JQWeqfwltJVPsCpwj_Rjdm0YN7xbc`,
-      },
-    },
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         // Footnotes mode (default: true)
@@ -62,6 +55,20 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: "http://localhost:1337",
+        collectionTypes: [
+          "car-classes",
+          "cars",
+          "discount-programs",
+          "seller-informations", 
+          "sliders", 
+        ],
+        queryLimit: 1000,
       },
     },
   ],

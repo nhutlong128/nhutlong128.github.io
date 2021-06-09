@@ -8,17 +8,17 @@ import { graphql, useStaticQuery } from "gatsby"
 function Footer() {
     const GET_ALL_SELLER = useStaticQuery(graphql`
     query GetAllSeller {
-        allContentfulSellerInformation {
+        allStrapiSellerInformations {
         nodes {
-            address
-            authorizedMercedesBenzDealers
-            email
-            phone
+           Name
+           Address
+           Phone
+           Email
         }
         }
     }`
     );
-    const list_seller = GET_ALL_SELLER.allContentfulSellerInformation.nodes
+    const list_seller = GET_ALL_SELLER.allStrapiSellerInformations.nodes
     return (
         <Container className='mt-4 p-5 bg-dark text-white' fluid>
                 <Row>
@@ -32,17 +32,17 @@ function Footer() {
                                     <hr className='border border-thick mt-0'/>
                                     
                                     <Row className='ml-0'>
-                                        <h5><i className="fas fa-car"></i> <b>{item.authorizedMercedesBenzDealers}</b></h5>
+                                        <h5><i className="fas fa-car"></i> <b>{item.Name}</b></h5>
                                     </Row>
                                     <Row className='ml-0'>
-                                        <p><i className="fas fa-map-marked-alt"></i> Địa chỉ: <b>{item.address}</b></p>
+                                        <p><i className="fas fa-map-marked-alt"></i> Địa chỉ: <b>{item.Address}</b></p>
                                     </Row>
                                     <Row className='ml-0'>
-                                        <p><i className="fas fa-phone"></i> Điện thoại: <b>{item.phone}</b></p>
+                                        <p><i className="fas fa-phone"></i> Điện thoại: <b>{item.Phone}</b></p>
                                     </Row>
 
                                     <Row className='ml-0'>
-                                        <p><i className="fas fa-inbox"></i> Email: <b>{item.email}</b></p>
+                                        <p><i className="fas fa-inbox"></i> Email: <b>{item.Email}</b></p>
                                     </Row>
                                 </Col>
                             );

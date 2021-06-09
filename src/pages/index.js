@@ -11,22 +11,24 @@ import { Helmet } from "react-helmet"
 import MercedesLogo from '../images/mercedes-benz-mb-vector-logo-400x400.png'
 
 function IndexPage() {
-  const all_car_list_query = useStaticQuery(graphql`
-  query GetAllCarWithinEachClass {
-    allContentfulCarClass {
-      edges {
-        node {
-          carClass
-          carClassPath: gatsbyPath(filePath: "/loai-xe/{contentfulCarClass.carClass}")
-          car_information {
-            carName: gatsbyPath(filePath: "/xe/{contentfulCarInformation.carDisplayName}")
-            carDisplayName
-            carPrice
-            priceUnit
-            metaData
-            thumbnail {
-              file {
-                url
+  const GET_ALL_CARS_FOR_INDEX_PAGE = useStaticQuery(graphql`
+  query GetAllCarsForIndexPage {
+    allStrapiCarClasses(sort: {fields: Order, order: ASC}) {
+      nodes {
+        Name
+        RouteName
+        Order
+        cars {
+          Description
+          DisplayName
+          RouteName
+          InstalmentPrice
+          OriginalPrice
+          Specification
+          Thumbnail {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
               }
             }
           }
@@ -35,7 +37,7 @@ function IndexPage() {
     }
   }
 `);
-  const all_car_list = all_car_list_query.allContentfulCarClass.edges
+  const all_car_list = GET_ALL_CARS_FOR_INDEX_PAGE.allStrapiCarClasses.nodes
   return (    
     <div>
       <Helmet>
@@ -47,12 +49,13 @@ function IndexPage() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="icon" href={MercedesLogo}/>
       </Helmet>
-      <Header all_car_list = {all_car_list}/>      
+      <Header/>      
       <ImageSlider/>
       <ProductCardDeck all_car_list = {all_car_list}/>
-      <CustomerForm all_car_list = {all_car_list}/>
+      <CustomerForm/>
+      
       <Footer />
-      <PhoneRinging all_car_list = {all_car_list}/>
+      <PhoneRinging/>
     </div>    
   );
 }

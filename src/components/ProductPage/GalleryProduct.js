@@ -1,14 +1,14 @@
 import React  from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import Img from "gatsby-image"
 import Container from 'react-bootstrap/Container';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 function GalleryProduct(props) {
     if (props.carGallery === null) {
         return null
     }
-    let carGalleryArray = props.carGallery.filter((item) => item.fluid !== null)
-    let carName = props.carName
+    let carGalleryArray = props.carGallery
+    let carName = props.carDisplay
     return (
         <Container className='my-5'>
             <Carousel>
@@ -16,7 +16,7 @@ function GalleryProduct(props) {
                     carGalleryArray.map((item, i) => {
                         return (
                             <Carousel.Item key={i}>
-                                <Img fluid={item.fluid} alt={carName}/>
+                                <GatsbyImage className='w-100 h-100'image={item.localFile.childImageSharp.gatsbyImageData} alt={carName} />
                             </Carousel.Item>
                         )
                     })

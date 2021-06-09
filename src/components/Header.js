@@ -4,8 +4,27 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
+import { graphql, useStaticQuery } from "gatsby"
 import MercedesLogo from '../images/mercedes-benz-mb-vector-logo-400x400.png'
-function Header(props) {
+
+
+function Header() {
+    const GET_ALL_CARS_FOR_HEADER = useStaticQuery(graphql`
+    query GetAllCarsForHeader {
+        allStrapiCarClasses {
+            nodes {
+                Name
+                RouteName
+                Order
+                cars {
+                DisplayName
+                RouteName
+                }
+            }
+        }
+    }
+`);
+    const all_car_list = GET_ALL_CARS_FOR_HEADER.allStrapiCarClasses.nodes
     return (
         <Navbar bg="dark" expand="md" sticky="top" variant='dark'>
             <Container className='align-items-center'>
@@ -25,25 +44,20 @@ function Header(props) {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto text-right" style={{ flex: 1, fontFamily: 'Lato, sans-serif'}}>
                     <Nav.Link className='mx-2 hover-link'><Link to='/' className='text-white' style={{ textDecoration: 'none' }}><b>TRANG CHỦ</b></Link></Nav.Link>
-                    <NavDropdown title={<span className='text-white ml-2 '><b>MERCEDES-BENZ</b></span>} className='hover-link' id="basic-nav-dropdown" alignleft="true" fluid='true'>
+                    <NavDropdown title={<span className='text-white ml-2 '><b>CÁC DÒNG XE MERCEDES-BENZ</b></span>} className='hover-link' id="basic-nav-dropdown" alignleft="true" fluid='true'>
                         {
-                            props.all_car_list.map((item, i) => {
-                                if (item.node['car_information'] === null) {
-                                    return null
-                                }
-                                else {
-                                }
+                            all_car_list.map((item, i) => {
                                     return (
-                                        <Container key={item.node.carClass} className='text-right'>
-                                            <NavDropdown.Item  as="button" variant="primary"><Link to={`${item.node.carClassPath}`} className='text-secondary' style={{ textDecoration: 'none' }}><b>{item.node.carClass}</b></Link></NavDropdown.Item>
-                                                {   (item.node['car_information'] !== null) &&
-                                                    item.node['car_information'].map((car, i) => {
+                                        <Container key={item.Name} className='text-right'>
+                                            <NavDropdown.Item  as="button" variant="primary"><Link to={`/loai-xe/${item.RouteName}`} className='text-secondary' style={{ textDecoration: 'none' }}><b>{item.Name}</b></Link></NavDropdown.Item>
+                                                {/*   (item.cars !== null) &&
+                                                    item.cars.map((car, i) => {
                                                         return (
-                                                            <NavDropdown.Item key={car.carName} className="underline"><Link to={`${car.carName}`} className='text-dark' style={{ textDecoration: 'none' }}>{car.carDisplayName}</Link></NavDropdown.Item>
+                                                            <NavDropdown.Item key={car.DisplayName} className="underline"><Link to={`/xe/${car.RouteName}`} className='text-dark' style={{ textDecoration: 'none' }}>{car.DisplayName}</Link></NavDropdown.Item>
                                                             
                                                         );
                                                     })
-                                                }
+                                                */}
                                             <NavDropdown.Divider/>
                                         </Container>
                                     );
@@ -54,9 +68,6 @@ function Header(props) {
                 </Nav>
             </Navbar.Collapse>
             </Container>
-            
-
-           
         </Navbar>
     );
 }

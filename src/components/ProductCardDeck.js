@@ -17,15 +17,12 @@ function ProductCardDeck(props) {
     
 
     const productBody = props.all_car_list.map((item, i) => {
-        if (item.node['car_information'] === null) {
-            return null
-        }
         return (
-            <Container className='mt-4' key={item.node.carClass}>
+            <Container className='mt-4' key={item.Name}>
                 <Container className='mb-4'>
                     <Row className='align-items-center'>
                         <Col xs = {car_class_size} md = {car_class_size} lg = {car_class_size} className='p-0 m-0 text-white bg-dark'>
-                            <h6 className="text-center m-2 p-1" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>{item.node.carClass}</b></h6>
+                            <h6 className="text-center m-2 p-1" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>MERCEDES-BENZ {item.Name}</b></h6>
                         </Col>
                         <Col className='p-0 m-0'>
                             <hr className='border border-dark'/>
@@ -35,9 +32,9 @@ function ProductCardDeck(props) {
                 <CardDeck>
                 <Row>
                     
-                    {(item.node['car_information'] !== null) && item.node['car_information'].map((car, i) => {
+                    {(item.cars !== null) && item.cars.map((car, i) => {
                         return (
-                            <Col key={car.carName} xs = {card_xs_size} md = {card_md_size} lg = {card_lg_size}><ProductCard carInformation={car}/></Col>
+                            <Col key={car.DisplayName} xs = {card_xs_size} md = {card_md_size} lg = {card_lg_size}><ProductCard carInformation={car}/></Col>
                         );
                     })}
                 </Row>
