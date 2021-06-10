@@ -15,7 +15,7 @@ import GalleryProduct from '../../components/ProductPage/GalleryProduct';
 import SpecificationProduct from '../../components/ProductPage/SpecificationProduct';
 import DiscountProduct from '../../components/ProductPage/DiscountProduct';
 import PriceProduct from '../../components/ProductPage/PriceProduct';
-import DescriptionProduct from '../../components/ProductPage/DescriptionProduct';
+//import DescriptionProduct from '../../components/ProductPage/DescriptionProduct';
 
 
 const left_xs_size = 12
@@ -61,12 +61,8 @@ function ProductPage(props) {
     return (
         <div>
             <Helmet>
-                <meta charSet="utf-8" />
                 <title>Mercedes Sài Gòn | {carInformation.DisplayName}</title>
                 <meta name="description" content={`Giá xe ${carInformation.DisplayName} tốt nhất đăng ký lái thử tư vấn trả góp`} />
-                <meta name="referrer" content="origin"/>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
             </Helmet>
             <Header all_car_list = {all_car_list}/>
             {/* Container containing product page body    */}
@@ -83,13 +79,14 @@ function ProductPage(props) {
                 {/* Col containing specification & discount program    */}
                 <Col>
                   <SpecificationProduct carSpecification = {carInformation.Specification}/>  
-                  <DiscountProduct carDiscountProgram = {carInformation.discount_program}/>   
+                     
                 </Col>
               </Row>
               {/*Row containing Description about Product  */}
               <Row className='my-4'>
                 <Col>
-                  <DescriptionProduct carDescription = {carInformation.Description}/>
+                  <DiscountProduct carDiscountProgram = {carInformation.discount_program}/>
+                  {/* <DescriptionProduct carDescription = {carInformation.Description}/> */}
                 </Col>
               </Row>
               {/*Row containing Form  */}

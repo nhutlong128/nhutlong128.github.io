@@ -5,7 +5,11 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Container from 'react-bootstrap/Container'
 import { graphql, useStaticQuery } from "gatsby"
-import MercedesLogo from '../images/mercedes-benz-mb-vector-logo-400x400.png'
+import MercedesLogo from '../images/mercedes-benz-mb-vector-logo-60x60.png'
+import '../css/index.css';
+import '../css/bootstrap.min.css';
+import '../css/all.min.css';
+import { Helmet } from "react-helmet"
 
 
 function Header() {
@@ -26,7 +30,13 @@ function Header() {
 `);
     const all_car_list = GET_ALL_CARS_FOR_HEADER.allStrapiCarClasses.nodes
     return (
-        <Navbar bg="dark" expand="md" sticky="top" variant='dark'>
+        <div className="sticky-top" >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="referrer" content="origin"/>
+                <link rel="icon" href={MercedesLogo}/>
+            </Helmet>
+            <Navbar bg="dark" expand="md" variant='dark'>
             <Container className='align-items-center'>
             <Navbar.Brand href="#home" className='p-0 m-0'>
             <Link to='/' className='text-white'>
@@ -68,7 +78,9 @@ function Header() {
                 </Nav>
             </Navbar.Collapse>
             </Container>
-        </Navbar>
+            </Navbar>
+        </div>
+        
     );
 }
 
