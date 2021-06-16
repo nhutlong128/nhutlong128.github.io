@@ -1,5 +1,5 @@
-const siteUrl = 'https://mercedesretailsitemaster.gatsbyjs.io'
-const siteMap = 'https://mercedesretailsitemaster.gatsbyjs.io/sitemap/sitemap-0.xml'
+const siteUrl = 'https://www.tragopmercedes.com'
+const siteMap = 'https://www.tragopmercedes.com/sitemap/sitemap-0.xml'
 module.exports = {
   siteMetadata: {
     title: "Mercedes Sài Gòn",
@@ -17,10 +17,11 @@ module.exports = {
     },
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
+    'gatsby-plugin-cname',
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "273968871",
+        trackingId: "G-P9B2FZRRDB",
       },
     },
     "gatsby-plugin-react-helmet",

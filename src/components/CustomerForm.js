@@ -23,7 +23,7 @@ function CustomerForm(props){
             <hr className='border border-light mb-4'/>
             <Form action="https://formsubmit.co/nhutlong128@gmail.com" method="POST">
                 <input type="hidden" name="_cc" value="anhhuyc22017@gmail.com"/>
-                <input type="hidden" name="_next" value="https://mercedesretailsitemaster.gatsbyjs.io/CamOn/"/>
+                <input type="hidden" name="_next" value="https://tragopmercedes.com/CamOn/"/>
                 <input type="hidden" name="_captcha" value="false"/>
 
 

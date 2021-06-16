@@ -15,7 +15,7 @@ function PhoneRinging() {
         <div className="phonering-alo-phone phonering-alo-green phonering-alo-show" id="phonering-alo-phoneIcon">
             <div className="phonering-alo-ph-circle"></div>
             <div className="phonering-alo-ph-circle-fill"></div>
-            <a href = {`tel:${one_seller.Phone}`} className="pps-btn-img" title="Liên hệ ngay">
+            <a href = {`tel:${one_seller.Phone.replaceAll(" ", "")}`} className="pps-btn-img" title="Liên hệ ngay">
                 <div className="phonering-alo-ph-img-circle"></div>
             </a>
         </div>

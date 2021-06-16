@@ -74,6 +74,7 @@ function Header() {
                             })
                         }
                     </NavDropdown>
+                    <Nav.Link className='mx-2 hover-link'><Link to='/KhuyenMai' className='text-white' style={{ textDecoration: 'none' }}><b>TIN KHUYẾN MÃI</b></Link></Nav.Link>
                     <Nav.Link className='mx-2 hover-link'><Link to='/BaoGiaXe' className='text-white' style={{ textDecoration: 'none' }}><b>NHẬN BÁO GIÁ XE</b></Link></Nav.Link>
                 </Nav>
             </Navbar.Collapse>
