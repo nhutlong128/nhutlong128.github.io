@@ -20,13 +20,12 @@ function ProductCard(props) {
             </div>
             
             <Card.Body className='p-2'>
-                <Card.Title as='h6' style={{fontFamily: 'Roboto Condensed, sans-serif'}}><b>{carDisplayName}</b></Card.Title>
+                <Card.Title as='h5' style={{fontFamily: 'Roboto Condensed, sans-serif'}}><b>{carDisplayName}</b></Card.Title>
                 <Card.Text>
-                <p>Mua ngay: <b>{CarOriginalPrice}</b></p>
-                <h4>MUA TRƯỚC CHỈ: <b className='text-warning'>{CarInstalmentPrice}</b></h4>
-                
+                <h6 >Giá chỉ từ: <b>{CarOriginalPrice}</b></h6>
+                <h6 >Ưu đãi trả góp: <b>Liên hệ để biết thêm chi tiết</b></h6>
                 </Card.Text>
-                <Button variant="primary" className='btn-block' size='md'><Link className='stretched-link' to={`/xe/${carName}`}></Link>Chi tiết</Button>
+                <Button variant="danger" className='btn-block' size='md'><Link className='stretched-link' to={`/xe/${carName}`}></Link>Chi tiết</Button>
             </Card.Body>
         </Card>
 
