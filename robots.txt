@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: http://www.tragopmercedes.com/sitemap/sitemap-0.xml
-Host: www.tragopmercedes.com
+Sitemap: http://www.mercedesbenzsaigon.com/sitemap/sitemap-0.xml
+Host: www.mercedesbenzsaigon.com
