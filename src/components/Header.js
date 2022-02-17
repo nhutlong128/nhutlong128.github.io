@@ -79,7 +79,7 @@ function Header() {
                     </NavDropdown>
                     <Link to='/KhuyenMai' className='text-white nav-link mx-2 hover-link' style={{ textDecoration: 'none' }}><b>TIN KHUYẾN MÃI</b></Link>
                     <Link to='/BaoGiaXe' className='text-white nav-link mx-2 hover-link' style={{ textDecoration: 'none' }}><b>NHẬN BÁO GIÁ XE</b></Link>
-                    <span className='text-white nav-link mx-2' style={{ textDecoration: 'none' }}><b>LIÊN HỆ: 08 9999 74 98</b></span>
+                    <a href="tel:0899997498" className='text-white nav-link mx-2 hover-link' style={{ textDecoration: 'none' }}><b>LIÊN HỆ: 08 9999 74 98</b></a>
                 </Nav>
                 
             </Navbar.Collapse>

@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { graphql, useStaticQuery } from "gatsby"
-function CustomerForm(props){
-    const GET_ALL_CARS_FOR_CUSTOMER_FORM = useStaticQuery(graphql`
-    query GetAllCarsForCustomerForm {
+function LaiThuXe(props){
+    const GET_ALL_CARS_FOR_LAI_THU_XE_FORM = useStaticQuery(graphql`
+    query GetAllCarsForLaiThuXeForm {
       allStrapiCarClasses {
         nodes {
           Name
@@ -16,12 +16,12 @@ function CustomerForm(props){
       }
     }
   `);    
-    const all_car_list = GET_ALL_CARS_FOR_CUSTOMER_FORM.allStrapiCarClasses.nodes
+    const all_car_list = GET_ALL_CARS_FOR_LAI_THU_XE_FORM.allStrapiCarClasses.nodes
     return (
-        <Container className='text-white bg-dark align-items-center'>
-            <h5 className="text-center mt-2 pt-4" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>DUY NHẤT HÔM NAY</b></h5>
+        <Container className='px-1 py-1 my-1 text-white bg-dark align-items-center'>
+            <h5 className="text-center m-2 p-1" style={{fontFamily: 'Roboto Condensed, sans-serif'}}><i className="far fa-star"></i> <b>ĐĂNG KÝ LÁI THỬ XE</b></h5>
             <hr className='border border-light mb-4'/>
-            <h6 className="text-center m-2 p-1">Thời Điểm Vàng Mua Xe Mercedes. Cơ Hội Giảm 50% Thuế Trước Bạ, Giảm Thêm 40Tr.</h6>
+            <h6 className="text-center m-2 p-1">Nhập số điện thoại, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất</h6>
             <Form action="https://formsubmit.co/nhutlong128@gmail.com" method="POST">
                 <input type="hidden" name="_cc" value="anhhuyc22017@gmail.com"/>
                 <input type="hidden" name="_next" value="http://www.mercedesbenzsaigon.com/CamOn/"/>
@@ -59,9 +59,9 @@ function CustomerForm(props){
                     </Col>
                 </Row>
                 
-                <Row className="pb-3">
+                <Row>
                     <Col className='text-center'>
-                        <Button className="my-2 py-2" type="submit" size="xs"><b>Nhận báo giá mới nhất</b></Button>
+                        <Button type="submit" size="xs"><b>Đăng ký lái thử ngay</b></Button>
                     </Col>
                 </Row>
                 
@@ -71,6 +71,6 @@ function CustomerForm(props){
     )
 }
 
-export default CustomerForm;
+export default LaiThuXe;
 
 

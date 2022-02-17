@@ -1,5 +1,5 @@
-const siteUrl = 'https://www.tragopmercedes.com'
-const siteMap = 'https://www.tragopmercedes.com/sitemap/sitemap-0.xml'
+const siteUrl = 'http://www.mercedesbenzsaigon.com'
+const siteMap = 'http://www.mercedesbenzsaigon.com/sitemap/sitemap-0.xml'
 module.exports = {
   siteMetadata: {
     title: "Mercedes Sài Gòn",

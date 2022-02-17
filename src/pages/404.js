@@ -7,7 +7,7 @@ import CustomerForm from '../components/CustomerForm';
 import Footer from '../components/Footer';
 import PhoneRinging from '../components/PhoneRinging'
 import { Helmet } from "react-helmet"
-
+import CallAction from '../components/CallAction';
 function ErrorPage() {
 
   return (    
@@ -28,7 +28,7 @@ function ErrorPage() {
       </Container>
       <CustomerForm />
       <Footer />
-      <PhoneRinging />
+      <CallAction/>
     </div>    
   );
 }

@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import CustomerForm from '../components/CustomerForm';
 import Footer from '../components/Footer';
 import PhoneRinging from '../components/PhoneRinging'
+import CallAction from '../components/CallAction';
 import { Helmet } from "react-helmet"
 function CamOn() {
   return (    
@@ -26,7 +27,7 @@ function CamOn() {
       </Container>
       <CustomerForm />
       <Footer />
-      <PhoneRinging />
+      <CallAction/>
     </div>    
   );
 }

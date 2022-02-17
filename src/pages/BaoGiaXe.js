@@ -5,7 +5,8 @@ import CustomerForm from '../components/CustomerForm';
 import Footer from '../components/Footer';
 import PhoneRinging from '../components/PhoneRinging'
 import { Helmet } from "react-helmet"
-
+import { Container } from 'react-bootstrap';
+import CallAction from '../components/CallAction';
 
 function FormPage() {
 
@@ -15,10 +16,13 @@ function FormPage() {
         <title>Mercedes Sài Gòn | Báo giá xe</title>
         <meta name="description" content="CUNG CẤP CÁC DÒNG XE SANG MERCEDES-BENZ GIÁ TỐT NHẤT. NHẬN BÁO GIÁ, ĐĂNG KÝ LÁI THỬ CÁC DÒNG XE MERCEDES-BENZ BÁN CHẠY NHẤT" />       
       </Helmet>
-      <Header/>      
-      <CustomerForm />
+      <Header/>
+      <Container className="px-2 py-2 my-2">
+        <CustomerForm />
+      </Container>
+      
       <Footer />
-      <PhoneRinging />
+      <CallAction/>
     </div>    
   );
 }

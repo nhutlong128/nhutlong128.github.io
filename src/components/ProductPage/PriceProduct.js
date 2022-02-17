@@ -1,5 +1,6 @@
 import React  from 'react';
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button'
 
 function PriceProduct(props) {
     let carPrice = props.carPrice;
@@ -12,6 +13,7 @@ function PriceProduct(props) {
             <h4 className='text-warning'>{carPrice}</h4>
             <h4>Ưu đãi trả góp</h4>
             <h4 className='text-danger'><b>Xin quý khách vui lòng liên hệ để biết thêm chi tiết</b></h4>
+            
         </Container>
     );
 }

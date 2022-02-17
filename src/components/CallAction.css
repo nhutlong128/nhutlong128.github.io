@@ -1,0 +1,130 @@
+.sharecs-mobile-net-bar{ 
+display:none  
+}
+.nhan-bao-gia-mobile{
+    display: none;
+}
+.lai-thu-xe-mobile{
+    display: none;
+}
+.nhan-bao-gia-pc {
+    width:100px;
+    height:30px;
+    bottom:130px;
+    right:30px;
+    position:fixed;
+    z-index: 998;
+    
+}
+
+.lai-thu-xe-pc {
+    width:100px;
+    height:30px;
+    bottom:170px;
+    right:30px;
+    position:fixed;
+    z-index: 998;
+    
+}
+.sharecs-pc-net-bar{ 
+right: 25px; /** icon hiển thị bên trái - Muốn chuyển sang bên phải sửa right =>left**/
+padding: 0px !important;
+bottom: 30px; 
+position: fixed; 
+z-index: 998;
+margin-bottom:0px !important; /** Nếu icon sát đáy quá tăng 0px lên ví dụ 5px **/ 
+} 
+.sharecs-pc-net-bar li{
+ width: 44px;
+ height: 46px; 
+overflow: hidden; 
+ margin-bottom: 0;
+ list-style: none;
+ }
+ .sharecs-pc-net-bar li.facebook{
+ margin-bottom: 8px;
+ background:  url(https://congtynonbaohiem.com/wp-content/uploads/2017/10/bao-gia-icon.png); 
+ background-repeat: no-repeat; 
+} 
+.sharecs-pc-net-bar li.zalo{ 
+background: url(https://sharecs.net/wp-content/uploads/2021/05/Code-Chen-Hotline-–-Zalo-–-Facebook-Vao-Website-sharecs.net-zl.png); 
+background-repeat: no-repeat; 
+} 
+.sharecs-pc-net-bar li a{
+ display: block; 
+width: 44px; 
+height: 44px;
+ }
+.sharecs-pc-net-bar li.hotline { 
+    background: url(https://sharecs.net/wp-content/uploads/2021/05/Code-Chen-Hotline-vao-website-sharecs.net_.gif); 
+    background-repeat: no-repeat; 
+    background-size: 44px; 
+    } 
+
+@media only screen and (max-width: 499px) { 
+.sharecs-pc-net-bar{ 
+display:none 
+}
+.nhan-bao-gia-pc{
+    display:none
+}
+.lai-thu-xe-pc{
+    display: none;
+}
+ .sharecs-mobile-net-bar{
+ right: 10px; /** icon hiển thị bên trái - Muốn chuyển sang bên phải sửa right => left**/
+bottom: 10px; 
+position: fixed; 
+z-index: 998;
+ margin-bottom:0px !important; /** Nếu icon sát đáy quá tăng 0px lên ví dụ 5px **/ 
+display:block !Important
+ } 
+.sharecs-mobile-net-bar li{
+ width: 44px;
+ height: 46px; 
+overflow: hidden; 
+ margin-bottom: 0;
+ list-style:none
+ }
+.sharecs-mobile-net-bar li.facebook{ 
+margin-bottom: 8px;
+background: url(https://sharecs.net/wp-content/uploads/2021/05/code-messger-cho-website-sharecs.net-fb.png); 
+background-repeat: no-repeat;
+}
+ .sharecs-mobile-net-bar li.zalo{ 
+background: url(https://sharecs.net/wp-content/uploads/2021/05/Code-Chen-Hotline-–-Zalo-–-Facebook-Vao-Website-sharecs.net-zl.png);    
+background-repeat: no-repeat; 
+} 
+.sharecs-mobile-net-bar li a{ 
+display: block; 
+width: 44px; 
+height: 44px;
+}
+.sharecs-mobile-net-bar li.hotline { 
+background: url(https://sharecs.net/wp-content/uploads/2021/05/Code-Chen-Hotline-vao-website-sharecs.net_.gif); 
+background-repeat: no-repeat; 
+background-size: 44px; 
+}
+.nhan-bao-gia-mobile {
+    width:95px;
+    height:30px;
+    bottom:105px;
+    right:15px;
+    position:fixed;
+    z-index: 998;
+    display:block !Important
+    
+}
+
+.lai-thu-xe-mobile {
+    width:95px;
+    height:30px;
+    bottom:140px;
+    right:15px;
+    position:fixed;
+    z-index: 998;
+    display:block !Important
+    
+}
+} 
+

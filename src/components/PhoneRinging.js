@@ -18,7 +18,7 @@ function PhoneRinging() {
             <div className="phonering-alo-ph-circle-fill" ></div>
             <a href = {`tel:${phone}`} className="pps-btn-img" title="Liên hệ ngay" >
                 <div className="phonering-alo-ph-img-circle" style={{zIndex: 3, elevation: 3}}></div>
-                <span className="text-primary" style = {{position: 'fixed', bottom:0, right:10}}><b>08 9999 74 98</b></span>
+                {/*<span className="text-primary" style = {{position: 'fixed', bottom:0, right:10}}><b>{`${phone}`}</b></span>*/}
             </a>
             
         </div>

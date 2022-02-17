@@ -5,8 +5,10 @@ import ProductCardDeck from '../../components/ProductCardDeck'
 import Header from '../../components/Header';
 import CustomerForm from '../../components/CustomerForm';
 import Footer from '../../components/Footer';
-import PhoneRinging from '../../components/PhoneRinging'
+import CallAction from '../../components/CallAction';
 import { Helmet } from "react-helmet"
+import Popup from '../../components/PopUp';
+import { useState, useEffect } from 'react';
 
 
 function ClassPage(props) {
@@ -37,7 +39,14 @@ function ClassPage(props) {
   }
 `);
   const all_car_list = GET_ALL_CARS_FOR_CLASS_PAGE.allStrapiCarClasses.nodes
-  const selected_carClass = all_car_list.filter(({RouteName}) => RouteName === `${props.params.RouteName}`); 
+  const selected_carClass = all_car_list.filter(({RouteName}) => RouteName === `${props.params.RouteName}`);
+  const [timedPopup, setTimedPopup] = useState(false);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setTimedPopup(true);
+      }, 3000);
+    }, []);
   return (    
     <div>
       <Helmet>
@@ -48,7 +57,10 @@ function ClassPage(props) {
       <ProductCardDeck all_car_list = {selected_carClass}/>
       <CustomerForm/>
       <Footer />
-      <PhoneRinging/>
+      <CallAction/>
+      <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
+        <CustomerForm/>
+      </Popup>
     </div>    
   );
 }

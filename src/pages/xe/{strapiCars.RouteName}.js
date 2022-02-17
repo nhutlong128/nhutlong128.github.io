@@ -6,7 +6,7 @@ import '../../css/index.css';
 import Header from '../../components/Header';
 import CustomerForm from '../../components/CustomerForm';
 import Footer from '../../components/Footer';
-import PhoneRinging from '../../components/PhoneRinging'
+import CallAction from '../../components/CallAction'
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 
@@ -15,7 +15,10 @@ import GalleryProduct from '../../components/ProductPage/GalleryProduct';
 import SpecificationProduct from '../../components/ProductPage/SpecificationProduct';
 import DiscountProduct from '../../components/ProductPage/DiscountProduct';
 import PriceProduct from '../../components/ProductPage/PriceProduct';
+import DiscountInformation from '../../components/DiscountInformation';
 //import DescriptionProduct from '../../components/ProductPage/DescriptionProduct';
+import Popup from '../../components/PopUp';
+import { useState, useEffect } from 'react';
 
 
 const left_xs_size = 12
@@ -58,6 +61,13 @@ function ProductPage(props) {
     const all_car_list = GET_ALL_CARS_FOR_PRODUCT_PAGE.allStrapiCars.nodes;
     const selected_car = all_car_list.filter(({RouteName}) => RouteName === `${props.params.RouteName}`);
     const carInformation = selected_car[0]
+    const [timedPopup, setTimedPopup] = useState(false);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setTimedPopup(true);
+      }, 3000);
+    }, []);
     return (
         <div>
             <Helmet>
@@ -68,7 +78,7 @@ function ProductPage(props) {
             {/* Container containing product page body    */}
             <Container>
               {/* Row containing name & gallery & specification & discount program*/}
-              <Row className='my-4'>
+              <Row className='pt-2'>
                 {/* Col containing name & gallery   */}
                 <Col xs={left_xs_size} md={left_md_size} lg = {left_lg_size}>
                   <NameProduct carDisplayName = {carInformation.DisplayName}/>
@@ -77,28 +87,30 @@ function ProductPage(props) {
                   <CustomerForm/>
                 </Col>
                 {/* Col containing specification & discount program    */}
-                <Col>
-                  <SpecificationProduct carSpecification = {carInformation.Specification}/>  
-                     
+                <Col >
+                  <DiscountInformation/>
+                  <DiscountProduct carDiscountProgram = {carInformation.discount_program} carDisplayName = {carInformation.DisplayName}/>
                 </Col>
+                
               </Row>
               {/*Row containing Description about Product  */}
-              <Row className='my-4'>
-                <Col>
-                  <DiscountProduct carDiscountProgram = {carInformation.discount_program}/>
+              <Row className='pt-2'>
+               
                   {/* <DescriptionProduct carDescription = {carInformation.Description}/> */}
-                </Col>
               </Row>
               {/*Row containing Form  */}
-              <Row className='my-4'>
+              <Row className='pt-2'>
                 <Col>
-                  <CustomerForm/>
+                  <SpecificationProduct carSpecification = {carInformation.Specification} />  
                 </Col>
               </Row>
 
             </Container>
             <Footer />
-            <PhoneRinging/>
+            <CallAction/>
+            <Popup trigger={timedPopup} setTrigger={setTimedPopup}>
+              <CustomerForm/>
+            </Popup>
         </div>
     )
 }
